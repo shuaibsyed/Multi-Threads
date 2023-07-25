@@ -1,0 +1,13 @@
+#!/bin/tcsh -f
+
+# CMSC 216, Spring 2023, Project #11
+# Public test 3 (public3)
+#
+# Tests the program with just one filename on the command line, meaning only
+# one thread will be created (besides the main thread).  The file exists but
+# is an empty file, so it should have zero lines, works and characters.
+#
+# (c) Larry Herman, 2023.  You are allowed to use this code yourself, but
+# not to provide it to anyone else.
+
+./wc-threaded.x public3.inputdata

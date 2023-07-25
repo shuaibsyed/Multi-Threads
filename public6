@@ -1,0 +1,26 @@
+#!/bin/tcsh -f
+
+# CMSC 216, Spring 2023, Project #11
+# Public test 6 (public6)
+#
+# Tests the program with ten filenames on the command line, so ten threads
+# will be created.  The files are of non-trivial size.
+#
+# (To avoid having ten input files in the current directory there is only
+# one input file public6.input, but a UNIX command is used below to split it
+# up into ten temporary files.  Then they are removed after running your
+# program.)
+#
+# (c) Larry Herman, 2023.  You are allowed to use this code yourself, but
+# not to provide it to anyone else.
+
+# The following command splits the file public6.input up into ten files,
+# named public6.inputdata.00 through public6.inputdata.09.  These temporary
+# input files are removed at the end of this script below, but if you want
+# to see them, just run this split command in the shell.
+#
+split -d -l 17 public6.inputdata public6.inputdata.
+
+./wc-threaded.x public6.inputdata.*
+
+rm -f public6.inputdata.*
